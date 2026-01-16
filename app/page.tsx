@@ -7,7 +7,6 @@ import ProductCard from "./components/ProductCard"
 export default function Home() {
   const [cart, setCart] = useState<string[]>([])
 
-  // Sækja cart úr localStorage þegar component mountar
   useEffect(() => {
     const saved = localStorage.getItem("cart")
     if (saved) setCart(JSON.parse(saved))
@@ -29,9 +28,16 @@ export default function Home() {
 
       <h1 className="text-2xl font-bold mb-4">My Shop</h1>
 
-      <div className="grid grid-cols-2 gap-4">
-        <ProductCard name="Shoes" price={50} onAdd={addToCart} />
-        <ProductCard name="Jacket" price={120} onAdd={addToCart} />
+      <div className="grid grid-cols-3 gap-4">
+        <ProductCard name="Shoes" price={50} image="/shoes.jpg" onAdd={addToCart} />
+        <ProductCard name="Jacket" price={120} image="/jacket.jpg" onAdd={addToCart} />
+        <ProductCard name="T-Shirt" price={25} image="/tshirt.jpg" onAdd={addToCart} />
+        <ProductCard name="Jeans" price={80} image="/jeans.jpg" onAdd={addToCart} />
+        <ProductCard name="Hat" price={20} image="/hat.jpg" onAdd={addToCart} />
+        <ProductCard name="Backpack" price={60} image="/backpack.jpg" onAdd={addToCart} />
+        <ProductCard name="Sunglasses" price={35} image="/sunglasses.jpg" onAdd={addToCart} />
+        <ProductCard name="Watch" price={150} image="/watch.jpg" onAdd={addToCart} />
+        <ProductCard name="Sneakers" price={95} image="/sneakers.jpg" onAdd={addToCart} />
       </div>
     </main>
   )
