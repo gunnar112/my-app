@@ -6,7 +6,6 @@ import Link from "next/link"
 export default function CartPage() {
   const [cart, setCart] = useState<string[]>([])
 
-  // Sækja cart úr localStorage
   useEffect(() => {
     const saved = localStorage.getItem("cart")
     if (saved) setCart(JSON.parse(saved))
